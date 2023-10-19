@@ -1,11 +1,25 @@
 <h1 class="text-light text-center container-fluid p-3 h2 bg-secondary">
-    Technical Stack used in a project
-  </h1>
-  <div class="d-flex justify-content-center">
-    <div class="card m-3 text-center" style="width: 18rem">
-      <div class="card-body">
-        <h5 class="card-title h3">Home</h5>
-        <p class="card-text">Products which get from an API</p>
-        <button (click)="form()" class="btn btn-primary">Home</button>
-      </div>
+  Technical Stack used in a project
+</h1>
+<div class="d-flex justify-content-center">
+  <div class="card m-3 bg-primary-subtle p-5">
+    <div class="card-body">
+      <h5 class="card-title text-center h3">Form</h5>
+      <p class="card-text text-start">Three Input fields:</p>
+      <ul>
+        <li>Name</li>
+        <ul><li>Length must be above 4</li>
+        </ul>
+        <li>Email</li>
+        <ul><li>Eg:email@gmail.com</li>
+        </ul>
+        <li>Phone Number</li>
+        <ul><li>Phone number must be 10 digits</li>
+        </ul>
+      </ul>
+      <div class="d-grid">
+      <button (click)="form()" class="btn btn-primary">Home</button>
     </div>
+    </div>
+  </div>
+</div>

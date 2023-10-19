@@ -8,6 +8,6 @@ import { Router } from '@angular/router';
 export class IndexComponent {
   constructor(private router: Router) {}
   form() {
-    this.router.navigate(['/form'], { replaceUrl: true });
+    this.router.navigate(['/form']);
   }
 }
