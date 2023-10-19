@@ -1,0 +1,110 @@
+<h1 class="text-info text-center p-3 display-5">Form Validation</h1>
+<div class="row">
+  <div class="col"></div>
+  <div class="col-md-6">
+    <div class="container">
+      <form (ngSubmit)="onSubmit(todoForm)" #todoForm="ngForm">
+        <div class="input-group py-3">
+          <span class="input-group-text" id="addon-wrapping"
+            ><i class="fa fa-user"></i
+          ></span>
+          <input
+            type="text"
+            name="name"
+            ngModel
+            required
+            #modelName="ngModel"
+            minlength="4"
+            [ngClass]="modelName.invalid && modelName.dirty ? 'is-invalid' : ''"
+            [(ngModel)]="nameRef"
+            class="form-control"
+            placeholder="Name"
+            aria-label="name"
+            aria-describedby="addon-wrapping"
+          />
+          <div *ngIf="modelName.invalid" class="invalid-feedback">
+            Please enter a valid name
+          </div>
+        </div>
+        <div class="input-group py-3">
+          <span class="input-group-text" id="addon-wrapping"
+            ><i class="fa fa-envelope"></i
+          ></span>
+          <input
+            type="email"
+            name="email"
+            [(ngModel)]="emailRef"
+            class="form-control"
+            placeholder="Email Address"
+            aria-label="Username"
+            aria-describedby="addon-wrapping"
+            email
+            ngModel
+            required
+            #modelEmail="ngModel"
+            [ngClass]="
+              modelEmail.invalid && modelEmail.dirty ? 'is-invalid' : ''
+            "
+          />
+          <div *ngIf="modelEmail.invalid" class="invalid-feedback">
+            Please enter a valid email.
+          </div>
+        </div>
+        <div class="input-group py-3">
+          <span class="input-group-text" id="addon-wrapping"
+            ><i class="fa fa-phone"></i
+          ></span>
+          <input
+            type="text"
+            [(ngModel)]="numberRef"
+            ngModel
+            required
+            pattern="[0-9]{10}$"
+            #modelPhone="ngModel"
+            [ngClass]="
+              modelPhone.invalid && modelPhone.dirty ? 'is-invalid' : ''
+            "
+            name="Phone"
+            class="form-control"
+            placeholder="Phone Number"
+            aria-label="text"
+            aria-describedby="addon-wrapping"
+          />
+          <div *ngIf="modelPhone.invalid" class="invalid-feedback">
+            Please enter a valid phone number.
+          </div>
+        </div>
+        <div class="d-grid gap-2">
+          <button
+            class="btn btn-info"
+            [disabled]="todoForm.invalid"
+            (click)="add(todoForm)"
+            type="submit"
+          >
+            {{ btnText | uppercase }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col"></div>
+</div>
+<table class="table table-striped my-5 container">
+  <thead class="table-dark text-center">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email Address</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody class="text-center" *ngFor="let data of datas">
+    <td class="p-2" scope="col">{{ data.name }}</td>
+    <td class="p-2" scope="col">{{ data.email }}</td>
+    <td class="p-2" scope="col">{{ data.number }}</td>
+    <td class="p-2" scope="col">
+      <button class="btn btn-warning mx-3" (click)="edit(data.id)">Edit</button>
+      <button class="btn btn-danger" (click)="delete(data.id)">Delete</button>
+    </td>
+  </tbody>
+</table>
