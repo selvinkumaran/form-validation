@@ -1,25 +1,74 @@
-<h1 class="text-light text-center container-fluid p-3 h2 bg-secondary">
+<h1 class="text-light text-center container-fluid p-3 h2 bg-primary">
   Technical Stack used in a project
 </h1>
 <div class="d-flex justify-content-center">
-  <div class="card m-3 bg-primary-subtle p-5">
+  <div class="card m-3 bg-primary-subtle px-5">
     <div class="card-body">
       <h5 class="card-title text-center h3">Form</h5>
       <p class="card-text text-start">Three Input fields:</p>
       <ul>
         <li>Name</li>
-        <ul><li>Length must be above 4</li>
+        <ul>
+          <li>Length must be above 4</li>
         </ul>
         <li>Email</li>
-        <ul><li>Eg:email@gmail.com</li>
+        <ul>
+          <li>Eg:email@gmail.com</li>
         </ul>
         <li>Phone Number</li>
-        <ul><li>Phone number must be 10 digits</li>
+        <ul>
+          <li>Phone number must be 10 digits</li>
         </ul>
       </ul>
+      <p>
+        To see the website Click ↓
+        <span class="badge bg-primary">Home</span> button
+      </p>
+
       <div class="d-grid">
-      <button (click)="form()" class="btn btn-primary">Home</button>
+        <button (click)="form()" class="btn btn-primary">Home</button>
+      </div>
     </div>
-    </div>
+  </div>
+</div>
+<div class="container bg-secondary-subtle">
+  <div class="p-4 lh-lg">
+    <ul>
+      <li class="h4 list-unstyled">AppRoutingModule</li>
+      <ul>
+        <li>AppRoutingModule is for routing from one page to another page</li>
+        <li>
+          page:"",components:componentName -It will redirect to the respected
+          components which we included
+        </li>
+        <li>
+          page:"**",components:notFoundName- It will redirect if user enter
+          wroung url
+        </li>
+      </ul>
+    </ul>
+    <ul>
+      <li class="h4 list-unstyled">FormsModule</li>
+      <ul>
+        <li>
+          NgForm Creates a top-level FormGroup instance and binds it to a form
+          to track aggregate form value and validation status.
+        </li>
+        <li>
+          NgModel Creates a FormControl instance from a domain model and binds
+          it to a form control element.
+        </li>
+        <li>
+          EmailValidator A directive that adds the email validator to controls
+          marked with the email attribute. The directive is provided with the
+          NG_VALIDATORS multi-provider list.
+        </li>
+        <li>
+          MinLengthValidator A directive that adds minimum length validation to
+          controls marked with the minlength attribute. The directive is
+          provided with the NG_VALIDATORS multi-provider list.
+        </li>
+      </ul>
+    </ul>
   </div>
 </div>
